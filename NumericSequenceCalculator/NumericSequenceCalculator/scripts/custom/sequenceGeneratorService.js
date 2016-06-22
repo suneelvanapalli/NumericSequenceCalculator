@@ -22,7 +22,7 @@
 
                 $http({
                     method: 'POST',
-                    url: '/api/sequence/generate-sequence/' + input + '/' + seqtype 
+                    url: '/api/sequence/generate-sequence/' + seqtype + '/' + input
                 }).then(function successCallback(response) {
                     deferred.resolve(response);
                 }, function errorCallback(response) {

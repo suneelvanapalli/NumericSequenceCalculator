@@ -25,7 +25,7 @@
             var promise = sequenceGeneratorService.generateSequence(vm.input, vm.type);
 
             promise.then(function (response) {
-                vm.sequencetypes = response.data;
+                vm.generatedsequence = response.data;
             });
         }
     }

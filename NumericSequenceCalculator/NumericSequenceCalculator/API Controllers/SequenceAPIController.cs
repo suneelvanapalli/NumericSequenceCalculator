@@ -19,12 +19,41 @@ namespace NumericSequenceCalculator.API_Controllers
         }
 
         [HttpPost]
-        [Route("generate-sequence/{input}/{sequenceType}")]
-        public List<int> GetAllNumbers(int input, string sequenceType)
+        [Route("generate-sequence/all/{input}")]
+        public List<int> GetAllNumbers(int input)
         {
             return _sequenceService.GetAllNumbers(input);
         }
 
+        [HttpPost]
+        [Route("generate-sequence/even/{input}")]
+        public List<int> GetAllEvenNumbers(int input)
+        {
+            return _sequenceService.GetAllEvenNumbers(input);
+        }
+
+
+        [HttpPost]
+        [Route("generate-sequence/odd/{input}")]
+        public List<int> GetAllOddNumbers(int input)
+        {
+            return _sequenceService.GetAllOddNumbers(input);
+        }
+
+        [HttpPost]
+        [Route("generate-sequence/custom/{input}")]
+        public List<string> GetNumbersInCustomFormat(int input)
+        {
+            return _sequenceService.GetNumbersInCustomFormat(input);
+        }
+
+        [HttpPost]
+        [Route("generate-sequence/fibonacci/{input}")]
+        public List<int> GetAllFibonacciNumbers(int input)
+        {
+            return _sequenceService.GetAllFibonacciNumbers(input);
+        }
+        
         [HttpGet]
         [Route("getsequencetypes")]
         public List<SequenceType> GetSequenceTypes()

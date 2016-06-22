@@ -11,7 +11,7 @@ namespace NumericSequenceCalculator.BusinessServices
         List<int> GetAllNumbers(int input);
         List<int> GetAllOddNumbers(int input);
         List<int> GetAllEvenNumbers(int input);
-        List<int> GetNumbersInCustomFormat(int input);
+        List<string> GetNumbersInCustomFormat(int input);
         List<int> GetAllFibonacciNumbers(int input);
 
         List<SequenceType> GetSequenceTypes();
