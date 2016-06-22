@@ -18,8 +18,8 @@ namespace NumericSequenceCalculator.API_Controllers
             _sequenceService = sequenceService;
         }
 
-        [HttpGet]
-        [Route("getsequence")]
+        [HttpPost]
+        [Route("generate-sequence/{input}/{sequenceType}")]
         public List<int> GetAllNumbers(int input, string sequenceType)
         {
             return _sequenceService.GetAllNumbers(input);

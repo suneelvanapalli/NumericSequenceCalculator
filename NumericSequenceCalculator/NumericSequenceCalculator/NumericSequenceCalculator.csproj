@@ -127,6 +127,7 @@
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\custom\app.js" />
     <Content Include="scripts\custom\sequenceController.js" />
+    <Content Include="scripts\custom\sequenceGeneratorService.js" />
     <Content Include="scripts\jquery.js" />
     <Content Include="scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />

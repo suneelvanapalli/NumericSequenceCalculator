@@ -1,14 +1,10 @@
 ﻿
-<form ng-controller="sequenceController as sequence">
+<form ng-controller="sequenceController as sequence" ng-submit="sequence.generatesequence()">
 
     <div class="form-group">
         <label for="sequencetype">Sequence Types</label>
         <select class="form-control" id="sequencetype" ng-model="sequence.type">
-            <option>All numbers</option>
-            <option>Odd</option>
-            <option>Even</option>
-            <option>Custom</option>
-            <option>Fibonacci</option>
+            <option ng-repeat="seq in sequence.sequencetypes" value="{{seq.ID}}" >{{seq.Name}}</option>
         </select>
     </div>
 
@@ -17,7 +13,7 @@
         <input type="number" min="0" class="form-control" required ng-model="sequence.input" id="inputnumber" placeholder="Enter the number">
     </div>
 
-    <button type="submit" class="btn btn-default">Submit</button>
+    <button type="submit" class="btn btn-default" >Submit</button>
 
 </form>
 

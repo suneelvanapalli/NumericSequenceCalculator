@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using Autofac.Integration.Mvc;
 using Autofac.Integration.WebApi;
+using NumericSequenceCalculator.API_Controllers;
 using NumericSequenceCalculator.BusinessServices;
 using System.Reflection;
 using System.Web.Http;
@@ -13,17 +14,21 @@ namespace NumericSequenceCalculator
         public static void ConfigureContainer()
         {
             var builder = new ContainerBuilder();
+            var assemsbly = Assembly.GetExecutingAssembly();
 
-            builder.RegisterControllers(typeof(MvcApplication).Assembly);
+            builder.RegisterControllers(assemsbly);
 
             // Get your HttpConfiguration.
             var config = GlobalConfiguration.Configuration;
 
-            // Register your Web API controllers.
-            builder.RegisterApiControllers(typeof(MvcApplication).Assembly);
+            //WebApiConfig.Register(config);
+
+            builder.RegisterApiControllers(typeof(SequenceAPIController).Assembly);
+          //  // Register your Web API controllers.
+          //  builder.RegisterApiControllers(assemsbly);
 
             // OPTIONAL: Register the Autofac filter provider.
-            builder.RegisterWebApiFilterProvider(config);
+            //builder.RegisterWebApiFilterProvider(config);
 
 
             builder.RegisterType<SequenceService>().As<ISequenceService>().SingleInstance();
@@ -31,7 +36,15 @@ namespace NumericSequenceCalculator
             builder.RegisterFilterProvider();
             var container = builder.Build();
 
-            DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
+            // Set the dependency resolver for Web API.
+            var webApiResolver = new AutofacWebApiDependencyResolver(container);
+            GlobalConfiguration.Configuration.DependencyResolver = webApiResolver;
+
+            // Set the dependency resolver for MVC.
+            var mvcResolver = new AutofacDependencyResolver(container);
+            DependencyResolver.SetResolver(mvcResolver);
+
+            
         }
     }
 }
