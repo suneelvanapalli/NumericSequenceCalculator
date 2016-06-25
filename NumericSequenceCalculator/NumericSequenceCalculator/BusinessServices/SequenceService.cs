@@ -81,7 +81,7 @@ namespace NumericSequenceCalculator.BusinessServices
         {
             return new List<SequenceType>()
             {
-                new SequenceType { ID="ALL" , Name="AllNumbers" },
+                new SequenceType { ID="ALL" , Name="All Numbers" },
                 new SequenceType { ID="EVEN" , Name="Even" },
                 new SequenceType { ID="ODD" , Name="Odd" },
                 new SequenceType { ID="CUSTOM" , Name="Custom" },

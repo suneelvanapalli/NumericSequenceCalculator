@@ -2,10 +2,10 @@
 <form name="sequenceform" ng-controller="sequenceController as sequence" ng-submit="sequence.generatesequence()">
 
     <div class="form-group">
-        <label for="sequencetype">Sequence Types</label>
-        <select name="sequencetype" class="form-control" id="sequencetype" 
-                ng-model="sequence.type" required ng-options="seq as seq.Name for seq in sequence.sequencetypes track by seq.ID">            
-            <option value="" >Select Sequence type</option>
+        <label for="sequencetype">Select a Sequence Type:</label>
+        <select name="sequencetype" class="form-control" id="sequencetype"
+                ng-model="sequence.type" required ng-options="seq as seq.Name for seq in sequence.sequencetypes track by seq.ID">
+            <option value="">--Select--</option>
         </select>
         <span class="error" ng-show="sequenceform.sequencetype.$error.required">Please select a sequece type</span>
     </div>
@@ -16,13 +16,18 @@
         <span class="error" ng-show="sequenceform.input.$error.required">Please enter a number</span>
     </div>
 
-    <label for="inputnumber">Sequence</label>
-    <nav>
-        <ul class="pagination">           
-            <li ng-repeat="seq in sequence.generatedsequence track by $index"><a href="#">{{seq}}</a></li>
-        </ul>
-    </nav>
-    <button type="submit" ng-disabled="" class="btn btn-default" >Submit</button>
+    <button type="submit" ng-disabled="" class="btn btn-default">Submit</button>
+
+    <div class="form-group">
+        <label for="inputnumber">Sequence</label>
+        <nav>
+            <ul class="pagination">
+                <li ng-repeat="seq in sequence.generatedsequence track by $index">
+                    <a href="#" ng-click="sequence.input = seq">{{seq}}</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
 
 </form>
 
