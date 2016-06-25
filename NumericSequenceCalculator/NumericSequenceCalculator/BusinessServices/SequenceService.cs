@@ -48,7 +48,7 @@ namespace NumericSequenceCalculator.BusinessServices
                           .ToList();
         }
 
-        public bool IsMultiple(int x, int n)
+        private bool IsMultiple(int x, int n)
         {
             return (x % n) == 0;
         }
