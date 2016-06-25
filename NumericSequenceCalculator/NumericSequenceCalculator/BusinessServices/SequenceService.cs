@@ -14,19 +14,23 @@ namespace NumericSequenceCalculator.BusinessServices
                           .ToList();
         }
 
-        public List<int> GetAllFibonacciNumbers(int input)
+      
+        public List<int> GetAllFibonacciNumbers(int len)
         {
-            int Range = 10;
-            int ord1 = 0, ord2 = 0, ord3 = 0;
-            var FibSeries = Enumerable.Range(1, Range).Select(a =>
-            {
-                ord1 = a == 1 ? 0 : ord2;
-                ord2 = a == 1 ? 1 : ord3;
-                ord3 = a == 1 ? 0 : ord1 + ord2;
-                return ord3;
-            }).ToList();
+            var seq = new List<int>();
+             Fibonacci_Rec_Temp(0, 1,len,seq);
+            return seq;
 
-            return FibSeries;
+        }
+
+        private static List<int> Fibonacci_Rec_Temp(int a, int b,int len , List<int> sequence)
+        {
+            if (a <= len)
+            {
+                sequence.Add(a);
+                Fibonacci_Rec_Temp(b, a + b, len,sequence);
+            }
+            return sequence;
         }
 
         public List<int> GetAllNumbers(int input)
