@@ -1,5 +1,5 @@
 ﻿
-<form name="sequenceform" ng-controller="sequenceController as sequence" ng-submit="sequence.generatesequence()">
+<form name="sequenceform" ng-cloak ng-controller="sequenceController as sequence" ng-submit="sequence.generatesequence()">
 
     <div class="form-group">
         <label for="sequencetype">Select a Sequence Type:</label>
@@ -28,6 +28,8 @@
             </ul>
         </nav>
     </div>
+
+    <div class="loading" ng-show="sequence.showprogress">Loading&#8230;</div>
 
 </form>
 

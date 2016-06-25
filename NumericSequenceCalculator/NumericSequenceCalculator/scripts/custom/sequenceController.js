@@ -9,7 +9,7 @@
 
     function sequenceController(sequenceGeneratorService) {
         var vm = this;
-
+        vm.showprogress = false;
         init();
 
         function init() {
@@ -22,10 +22,13 @@
 
         vm.generatesequence = function () {
 
+            vm.showprogress = true;
             var promise = sequenceGeneratorService.generateSequence(vm.input, vm.type.ID);
+            
 
             promise.then(function (response) {
                 vm.generatedsequence = response.data;
+                vm.showprogress = false;
             });
         }
     }

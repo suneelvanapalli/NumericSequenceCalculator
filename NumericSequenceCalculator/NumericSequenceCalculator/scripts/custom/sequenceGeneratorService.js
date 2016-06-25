@@ -13,7 +13,7 @@
                     deferred.resolve(response);
                 }, function errorCallback(response) {
                     deferred.reject(response);
-                });
+                    });
 
                 return deferred.promise;
             },

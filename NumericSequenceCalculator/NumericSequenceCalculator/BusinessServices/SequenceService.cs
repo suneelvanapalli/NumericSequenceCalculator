@@ -35,7 +35,8 @@ namespace NumericSequenceCalculator.BusinessServices
 
         public List<int> GetAllNumbers(int input)
         {
-            return Enumerable.Range(1, input).ToList();
+            if (input == 0) return new List<int>() { 0 };
+            return Enumerable.Range(0, input+1).ToList();
         }
 
         public List<int> GetAllOddNumbers(int input)
@@ -47,7 +48,9 @@ namespace NumericSequenceCalculator.BusinessServices
 
         public List<string> GetNumbersInCustomFormat(int input)
         {
-            return Enumerable.Range(1, input)
+            if (input == 0) return new List<string>() { "0" };
+
+            return Enumerable.Range(0, input)
                           .Select(x => GetCustomFormat(x))
                           .ToList();
         }
