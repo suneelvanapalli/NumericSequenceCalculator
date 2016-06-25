@@ -22,7 +22,7 @@
 
         vm.generatesequence = function () {
 
-            var promise = sequenceGeneratorService.generateSequence(vm.input, vm.type);
+            var promise = sequenceGeneratorService.generateSequence(vm.input, vm.type.ID);
 
             promise.then(function (response) {
                 vm.generatedsequence = response.data;

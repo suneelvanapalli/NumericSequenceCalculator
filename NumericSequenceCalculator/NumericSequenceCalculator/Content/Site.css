@@ -16,3 +16,8 @@ textarea {
     max-width: 280px;
 }
 
+.ng-invalid .ng-invalid-required{
+    border-color : red;
+}
+
+
