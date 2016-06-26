@@ -123,13 +123,26 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="scripts\angular-mocks.js" />
     <Content Include="scripts\angular.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\custom\app.js" />
     <Content Include="scripts\custom\sequenceController.js" />
     <Content Include="scripts\custom\sequenceGeneratorService.js" />
+    <Content Include="scripts\jasmine-2.4.1\boot.js" />
+    <Content Include="scripts\jasmine-2.4.1\console.js" />
+    <Content Include="scripts\jasmine-2.4.1\jasmine-html.js" />
+    <Content Include="scripts\jasmine-2.4.1\jasmine.css" />
+    <Content Include="scripts\jasmine-2.4.1\jasmine.js" />
+    <Content Include="scripts\jasmine-2.4.1\jasmine_favicon.png" />
     <Content Include="scripts\jquery.js" />
     <Content Include="scripts\modernizr-2.6.2.js" />
+    <Content Include="scripts\SpecRunner.html" />
+    <Content Include="scripts\spec\sequenceController.spec.js" />
+    <Content Include="scripts\src\Player.js" />
+    <Content Include="scripts\src\Song.js" />
+    <Content Include="scripts\spec\PlayerSpec.js" />
+    <Content Include="scripts\spec\SpecHelper.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
