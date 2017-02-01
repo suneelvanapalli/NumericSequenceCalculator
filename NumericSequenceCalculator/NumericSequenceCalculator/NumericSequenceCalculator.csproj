@@ -139,8 +139,6 @@
     <Content Include="scripts\modernizr-2.6.2.js" />
     <Content Include="scripts\SpecRunner.html" />
     <Content Include="scripts\spec\sequenceController.spec.js" />
-    <Content Include="scripts\src\Player.js" />
-    <Content Include="scripts\src\Song.js" />
     <Content Include="scripts\spec\PlayerSpec.js" />
     <Content Include="scripts\spec\SpecHelper.js" />
     <Content Include="Web.config" />
@@ -178,6 +176,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="scripts\src\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
