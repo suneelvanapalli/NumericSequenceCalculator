@@ -139,8 +139,6 @@
     <Content Include="scripts\modernizr-2.6.2.js" />
     <Content Include="scripts\SpecRunner.html" />
     <Content Include="scripts\spec\sequenceController.spec.js" />
-    <Content Include="scripts\spec\PlayerSpec.js" />
-    <Content Include="scripts\spec\SpecHelper.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
